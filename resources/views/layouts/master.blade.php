@@ -29,10 +29,12 @@
                     </form>
                 </div>
             </header>
-            @yield('content')            
+            <section class="mainContent">
+                @yield('content')            
+            </section>
             <footer class="mainFooter">
                 <div class="wrapper">
-                    <p>&copy; {{date('Y')}} LaraBlogger</p>
+                    <p>&copy; {{ date('Y') }} LaraBlogger</p>
                     <nav>
                         <ul>
                             <li><a href="{{route('about')}}">About me</a></li>

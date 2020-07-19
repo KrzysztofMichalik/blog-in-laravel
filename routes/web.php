@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.posts');
-});
+use App\Http\Controllers\PostController;
+
+Route::get('/', 'PostController@index');
+Route::get('/posts/{id}', 'PostController@show');
 
 Route::get('/about-me', function () {
     return view('pages.about');

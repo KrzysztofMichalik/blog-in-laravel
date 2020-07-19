@@ -1,20 +1,17 @@
 @extends('layouts.master')
-@section('title', 'Posts')
+@section('title', $post->title)
 @section('content')
-@if($posts->count() > 0)
-@foreach ($posts as $post)
+
 @if($post->type === 'text')
 <article class="post formatText">
     <div class="postContent">
         <div class="wrapper">
             <h2 class="postTitle">
-                <a href="posts/{{$post->id}}">{{ $post->title }}</a>
+                <a href="#">{{ $post->title }}</a>
             </h2>
             <div class="rte">
                 {!! $post->content !!}
-                <p class="readMore">
-                    <a href="posts/{{$post->id}}">Keep reading</a>
-                </p>
+                
             </div>
         </div>
     </div>
@@ -66,11 +63,5 @@
         </div>
     </div>
 </article>
-@endif
-@endforeach
-@else
-<div class="wrapper">
-    <p>nie dodano jeszcze zadnych wpisów</p>
-</div>
 @endif
 @endsection
